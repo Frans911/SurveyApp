@@ -1,5 +1,12 @@
-mat-list,
-mat-list-item,
-button {
-    width: 80%
-}
+ button {
+     width: 200%
+ }
+ 
+ .body {
+     background-image: url(../../../assets/images/Background.jpg);
+     height: 100%;
+     background-position: center;
+     background-repeat: no-repeat;
+     background-size: cover;
+     background-attachment: fixed;
+ }

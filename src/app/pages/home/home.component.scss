@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
 mat-list,
 mat-list-item {
     width: 100%;
@@ -18,4 +19,9 @@ table {
 .error {
     color: red;
     font-size: 8pt;
+}
+
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #58D68D;
 }

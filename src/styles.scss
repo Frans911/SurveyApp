@@ -13,7 +13,7 @@ $SurveysApp-primary: mat-palette($mat-blue);
 $SurveysApp-accent: mat-palette($mat-green);
 // $SurveysApp-accent: mat-palette($mat-pink, A200, A100, A400);
 // The warn palette is optional (defaults to red).
-$SurveysApp-warn: mat-palette($mat-red);
+$SurveysApp-warn: mat-palette($mat-green);
 // Create the theme object (a Sass map containing all of the palettes).
 $SurveysApp-theme: mat-light-theme($SurveysApp-primary, $SurveysApp-accent, $SurveysApp-warn);
 // Include theme styles for core and each component used in your app.
