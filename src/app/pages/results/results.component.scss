@@ -1,16 +1,14 @@
+@import url('https://fonts.googleapis.com/css?family=Berkshire+Swash&display=swap');
 mat-list,
 mat-list-item {
     width: 100%;
 }
 
-.example-full-width {
-    width: 30%;
+h1 {
+    font-family: 'Berkshire Swash', cursive;
+    color: #58D68D;
 }
 
-.example-form {
-    margin: 0.5em;
-}
-
-table {
-    width: 100%;
+.item {
+    margin: 0 0 0 15%;
 }

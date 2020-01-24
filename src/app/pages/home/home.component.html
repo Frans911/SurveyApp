@@ -1,172 +1,163 @@
-<mat-grid-list cols="4" rowHeight="2:1">
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile style="border: 1px solid lightgray;margin: 0.5em;border-radius: 5px;" [colspan]="2" [rowspan]="6">
-        <div style="width: 100%;">
-            <mat-list>
-                <mat-list-item>
-                    <h1>Take Our Survey</h1>
-                </mat-list-item>
-                <mat-list-item>
-                </mat-list-item>
-                <mat-divider></mat-divider>
-                <mat-list-item>
-                    <h4>Personal Information :</h4>
-                </mat-list-item>
-                <form class="example-form" [formGroup]="PersonalInformation" (ngSubmit)="Submit()">
-                    <mat-list-item>
-                        <mat-form-field class="example-full-width">
-                            <input formControlName="lastname" matInput placeholder="Last Name :">
-                        </mat-form-field>
-                    </mat-list-item>
-                    <div class="error" *ngIf="PersonalInformation.get('lastname').hasError('required') && PersonalInformation.get('lastname').touched">
-                        Please enter your last name
-                    </div>
-                    <mat-list-item>
-                        <mat-form-field class="example-full-width">
-                            <input formControlName="fullname" matInput placeholder="First Name :">
-                        </mat-form-field>
-                    </mat-list-item>
-                    <div class="error" *ngIf="PersonalInformation.get('fullname').hasError('required') && PersonalInformation.get('fullname').touched">
-                        Please enter your first name
-                    </div>
-                    <mat-list-item>
-                        <mat-form-field class="example-full-width">
-                            <input type="tel" maxlength="10" formControlName="number" matInput placeholder="Contact Number :">
-                        </mat-form-field>
-                    </mat-list-item>
-                    <div class="error" *ngIf="PersonalInformation.get('number').hasError('required') && PersonalInformation.get('number').touched">
-                        Please enter your contacts
-                    </div>
-                    <mat-list-item>
-                        <mat-form-field>
-                            <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
-                            <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-                            <mat-datepicker #picker></mat-datepicker>
-                        </mat-form-field>
-                    </mat-list-item>
-                    <div class="error" *ngIf="PersonalInformation.get('date').hasError('required') && PersonalInformation.get('date').touched">
-                        Please enter date
-                    </div>
-                    <mat-list-item>
-                        <mat-form-field class="example-full-width">
-                            <input maxlength="3" formControlName="age" matInput placeholder="Age:">
-                        </mat-form-field>
-                    </mat-list-item>
-                    <div class="error" *ngIf="PersonalInformation.get('age').hasError('required') && PersonalInformation.get('age').touched">
-                        Please enter your age
-                    </div>
-                    <div class="error" *ngIf="PersonalInformation.get('age').hasError('max') || PersonalInformation.get('age').hasError('min')">
-                        Minimum age 5 and Maximum 120
-                    </div>
+<div style="width: 50%;margin: 0 0 0 25%;border: 1px solid lightgray;">
+    <mat-list>
+        <mat-list-item>
+            <h1>Take Our Survey</h1>
+        </mat-list-item>
+        <mat-divider></mat-divider>
+        <mat-list-item>
+            <h4>Personal Information :</h4>
+        </mat-list-item>
+        <form class="example-form" [formGroup]="PersonalInformation">
+            <mat-list-item>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="lastname" matInput placeholder="Last Name :">
+                </mat-form-field>
+            </mat-list-item>
+            <div class="error" *ngIf="PersonalInformation.get('lastname').hasError('required') && PersonalInformation.get('lastname').touched">
+                Please enter your last name
+            </div>
+            <mat-list-item>
+                <mat-form-field class="example-full-width">
+                    <input formControlName="fullname" matInput placeholder="First Name :">
+                </mat-form-field>
+            </mat-list-item>
+            <div class="error" *ngIf="PersonalInformation.get('fullname').hasError('required') && PersonalInformation.get('fullname').touched">
+                Please enter your first name
+            </div>
+            <mat-list-item>
+                <mat-form-field class="example-full-width">
+                    <input type="tel" maxlength="10" formControlName="number" matInput placeholder="Contact Number :">
+                </mat-form-field>
+            </mat-list-item>
+            <div class="error" *ngIf="PersonalInformation.get('number').hasError('required') && PersonalInformation.get('number').touched">
+                Please enter your contacts
+            </div>
+            <div class="error" *ngIf="PersonalInformation.get('number').hasError('pattern')">
+                Please enter a number
+            </div>
+            <mat-list-item>
+                <mat-form-field>
+                    <input matInput formControlName="date" [matDatepicker]="picker" placeholder="Choose a date">
+                    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+                    <mat-datepicker #picker></mat-datepicker>
+                </mat-form-field>
+            </mat-list-item>
+            <div class="error" *ngIf="PersonalInformation.get('date').hasError('required') && PersonalInformation.get('date').touched">
+                Please enter date
+            </div>
+            <mat-list-item>
+                <mat-form-field class="example-full-width">
+                    <input maxlength="3" formControlName="age" matInput placeholder="Age:">
+                </mat-form-field>
+            </mat-list-item>
+            <div class="error" *ngIf="PersonalInformation.get('age').hasError('required') && PersonalInformation.get('age').touched">
+                Please enter your age
+            </div>
+            <div class="error" *ngIf="PersonalInformation.get('age').hasError('pattern')">
+                Please enter a number
+            </div>
+            <div class="error" *ngIf="PersonalInformation.get('age').hasError('max') || PersonalInformation.get('age').hasError('min')">
+                Minimum age 5 and Maximum 120
+            </div>
 
-                </form>
-                <form [formGroup]="FavouriteFood">
-                    <mat-list-item>
-                        <h5>What is your favourite food ? (You can choose more than 1 answer)</h5>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="pizza">Pizza</mat-checkbox>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="pasta">Pasta</mat-checkbox>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="papWors">Pap and Wors</mat-checkbox>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="chicken">Chicken Stir Fry</mat-checkbox>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="beef">Beef Stir Fry</mat-checkbox>
-                    </mat-list-item>
-                    <mat-list-item>
-                        <mat-checkbox class="example-margin" formControlName="other">Other</mat-checkbox>
-                    </mat-list-item>
-                </form>
+        </form>
+        <form [formGroup]="FavouriteFood">
+            <mat-list-item>
+                <h5>What is your favourite food ? (You can choose more than 1 answer)</h5>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="pizza">Pizza</mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="pasta">Pasta</mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="papWors">Pap and Wors</mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="chicken">Chicken Stir Fry</mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="beef">Beef Stir Fry</mat-checkbox>
+            </mat-list-item>
+            <mat-list-item>
+                <mat-checkbox class="example-margin" formControlName="other">Other</mat-checkbox>
+            </mat-list-item>
+        </form>
 
-                <mat-list-item>
-                    <h5>On a scale of 1 to 5 indicate whether you strongly agree to strongly disagree</h5>
-                </mat-list-item>
-                <mat-list-item>
-                </mat-list-item>
-                <mat-list-item>
-                </mat-list-item>
-                <mat-list-item>
-                    <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
+        <mat-list-item>
+            <h5>On a scale of 1 to 5 indicate whether you strongly agree to strongly disagree</h5>
+        </mat-list-item>
+        <mat-list-item>
+        </mat-list-item>
+        <mat-list-item>
+        </mat-list-item>
+        <mat-list-item>
+            <table mat-table [dataSource]="dataSource" class="mat-elevation-z8">
 
-                        <!--- Note that these columns can be defined in any order.
+                <!--- Note that these columns can be defined in any order.
                               The actual rendered columns are set as a property on the row definition" -->
 
-                        <!-- Position Column -->
-                        <ng-container matColumnDef="habit">
-                            <th mat-header-cell *matHeaderCellDef> </th>
-                            <td mat-cell *matCellDef="let element"> {{element.habit}} </td>
-                        </ng-container>
+                <!-- Position Column -->
+                <ng-container matColumnDef="habit">
+                    <th mat-header-cell *matHeaderCellDef> </th>
+                    <td mat-cell *matCellDef="let element"> {{element.habit}} </td>
+                </ng-container>
 
-                        <!-- Name Column -->
-                        <ng-container matColumnDef="strongAgree">
-                            <th mat-header-cell *matHeaderCellDef> Strongly Agree </th>
-                            <td mat-cell *matCellDef="let element">
-                                <mat-radio-group [(ngModel)]="element.button">
-                                    <mat-radio-button (click)="show(element.strongAgree)" [value]="element.strongAgree"></mat-radio-button>
-                                </mat-radio-group>
-                            </td>
-                        </ng-container>
+                <!-- Name Column -->
+                <ng-container matColumnDef="strongAgree">
+                    <th mat-header-cell *matHeaderCellDef> Strongly Agree </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group [(ngModel)]="element.button">
+                            <mat-radio-button (click)="show(element.strongAgree)" [value]="element.strongAgree"></mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </ng-container>
 
-                        <!-- Weight Column -->
-                        <ng-container matColumnDef="agree">
-                            <th mat-header-cell *matHeaderCellDef> Agree </th>
-                            <td mat-cell *matCellDef="let element">
-                                <mat-radio-group [(ngModel)]="element.button">
-                                    <mat-radio-button (click)="show(element.agree)" [value]="element.agree"></mat-radio-button>
-                                </mat-radio-group>
-                            </td>
-                        </ng-container>
+                <!-- Weight Column -->
+                <ng-container matColumnDef="agree">
+                    <th mat-header-cell *matHeaderCellDef> Agree </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group [(ngModel)]="element.button">
+                            <mat-radio-button (click)="show(element.agree)" [value]="element.agree"></mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </ng-container>
 
-                        <!-- Symbol Column -->
-                        <ng-container matColumnDef="neutral">
-                            <th mat-header-cell *matHeaderCellDef> Neutral </th>
-                            <td mat-cell *matCellDef="let element">
-                                <mat-radio-group [(ngModel)]="element.button">
-                                    <mat-radio-button (click)="show(element.neutral)" [value]="element.neutral"></mat-radio-button>
-                                </mat-radio-group>
-                            </td>
-                        </ng-container>
+                <!-- Symbol Column -->
+                <ng-container matColumnDef="neutral">
+                    <th mat-header-cell *matHeaderCellDef> Neutral </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group [(ngModel)]="element.button">
+                            <mat-radio-button (click)="show(element.neutral)" [value]="element.neutral"></mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </ng-container>
 
-                        <ng-container matColumnDef="disagree">
-                            <th mat-header-cell *matHeaderCellDef> Disagree </th>
-                            <td mat-cell *matCellDef="let element">
-                                <mat-radio-group [(ngModel)]="element.button">
-                                    <mat-radio-button (click)="show(element.disagree)" [value]="element.disagree"></mat-radio-button>
-                                </mat-radio-group>
-                            </td>
-                        </ng-container>
+                <ng-container matColumnDef="disagree">
+                    <th mat-header-cell *matHeaderCellDef> Disagree </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group [(ngModel)]="element.button">
+                            <mat-radio-button (click)="show(element.disagree)" [value]="element.disagree"></mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </ng-container>
 
-                        <ng-container matColumnDef="strongDisagree">
-                            <th mat-header-cell *matHeaderCellDef> Strongly Disagree </th>
-                            <td mat-cell *matCellDef="let element">
-                                <mat-radio-group [(ngModel)]="element.button">
-                                    <mat-radio-button (click)="show(element.strongDisagree)" [value]="element.strongDisagree"></mat-radio-button>
-                                </mat-radio-group>
-                            </td>
-                        </ng-container>
+                <ng-container matColumnDef="strongDisagree">
+                    <th mat-header-cell *matHeaderCellDef> Strongly Disagree </th>
+                    <td mat-cell *matCellDef="let element">
+                        <mat-radio-group [(ngModel)]="element.button">
+                            <mat-radio-button (click)="show(element.strongDisagree)" [value]="element.strongDisagree"></mat-radio-button>
+                        </mat-radio-group>
+                    </td>
+                </ng-container>
 
-                        <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-                        <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
-                    </table>
-                </mat-list-item>
-            </mat-list>
-            <div style="margin: 20% 0 0 33%;">
-                <button style="width: 50%;" mat-stroked-button color="primary" (click)="Upload()">OK</button>
-            </div>
-        </div>
-
-    </mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-    <mat-grid-tile></mat-grid-tile>
-</mat-grid-list>
+                <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+                <tr mat-row *matRowDef="let row; columns: displayedColumns;"></tr>
+            </table>
+        </mat-list-item>
+    </mat-list>
+    <div style="margin: 15% 0 0 33%;">
+        <button style="width: 50%;margin: 0 0 10% 0;" mat-raised-button color="primary" (click)="Upload()">OK</button>
+    </div>
+</div>
