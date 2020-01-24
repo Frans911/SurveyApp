@@ -1,0 +1,7 @@
+@import '~@angular/material/theming';
+@include mat-core();
+$dashboard-theme-primary: mat-palette($mat-green);
+$dashboard-theme-accent: mat-palette($mat-pink, A200, A100, A400);
+$dashboard-theme-warn: mat-palette($mat-red);
+$dashboard-theme-theme: mat-light-theme($dashboard-theme-primary, $dashboard-theme-accent, $dashboard-theme-warn);
+@include angular-material-theme($dashboard-theme-theme);

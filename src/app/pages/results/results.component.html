@@ -1,0 +1,85 @@
+<mat-grid-list cols="4" rowHeight="2:1">
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile [colspan]="2" [rowspan]="6">
+        <div style="width: 100%;margin: 0 0 60% 20%;">
+            <mat-list>
+                <mat-list-item>
+                    <h5>Total number of surveys:</h5>
+                    <div style="position: relative;left: 20%;">
+                        <h5># {{TotalNumberSurveys}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Average age:</h5>
+                    <div style="position: relative;left: 29%;">
+                        <h5># {{AvarageAge}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Oldest person who participated in survey</h5>
+                    <div style="position: relative;left: 7%;">
+                        <h5># {{OldestPerson}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Youngest person who participated in survey</h5>
+                    <div style="position: relative;left: 5%;">
+                        <h5># {{YoungestPerson}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Percentage of people who like Pizza:</h5>
+                    <div style="position: relative;left: 11%;">
+                        <h5># {{PizzaLoverPercentage.toFixed(0)}} %</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Percentage of people who like Pasta:</h5>
+                    <div style="position: relative;left: 11%;">
+                        <h5># {{PastaLoversPercentage.toFixed(0)}} %</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>Percentage of people who like Pap and Wors:</h5>
+                    <div style="position: relative;left: 5%;">
+                        <h5># {{PapWorsPercentages.toFixed(0)}} %</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>People like to eat out:</h5>
+                    <div style="position: relative;left: 24%;">
+                        <h5># {{AverageEatOutes.toFixed(1)}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>People like to watch movies:</h5>
+                    <div style="position: relative;left: 19%;">
+                        <h5># {{AverageMovieWatchers.toFixed(1)}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>People like to watch TV:</h5>
+                    <div style="position: relative;left: 22.2%;">
+                        <h5># {{AverageTvWatchers.toFixed(1)}}</h5>
+                    </div>
+                </mat-list-item>
+                <mat-list-item>
+                    <h5>People like to listen to the radio:</h5>
+                    <div style="position: relative;left: 15.5%;">
+                        <h5># {{AverageRadioListeners.toFixed(1)}}</h5>
+                    </div>
+                </mat-list-item>
+            </mat-list>
+            <div style="margin: 0 0 0 27%;">
+                <button style="width: 50%;" mat-stroked-button color="primary" (click)="Confirm()">OK</button>
+            </div>
+        </div>
+    </mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+    <mat-grid-tile></mat-grid-tile>
+</mat-grid-list>
